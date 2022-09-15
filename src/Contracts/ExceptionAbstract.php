@@ -75,7 +75,7 @@ abstract class ExceptionAbstract extends \Exception
     public function report(): void
     {
         if (app(ExceptionHandler::class)?->isSentryBounded() === true) {
-            \Sentry\withScope(function (Scope $scope): void {
+            \Sentry\configureScope(function (Scope $scope): void {
                 app(Pipeline::class)
                     ->send($scope)
                     ->through($this->getScopes())
