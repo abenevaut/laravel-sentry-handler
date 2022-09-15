@@ -1,0 +1,43 @@
+{
+    "name": "abenevaut/laravel-sentry-handler",
+    "type": "library",
+    "description": "Laravel sentry exceptions handler",
+    "keywords": [
+        "laravel",
+        "sentry",
+        "exceptions",
+        "handler"
+    ],
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "Antoine Benevaut",
+            "email": "antoine@benevaut.fr"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "sentry/sentry-laravel": "^2.12"
+    },
+    "autoload": {
+        "psr-4": {
+            "abenevaut\\SentryHandler\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "vendor/bin/phpunit",
+            "vendor/bin/phpcs --standard=PSR12 ./src/Exceptions"
+        ]
+    },
+    "require-dev": {
+        "laravel/framework": "^9.17",
+        "phpunit/phpunit": "^9.5",
+        "mockery/mockery": "^1.5"
+    }
+}
