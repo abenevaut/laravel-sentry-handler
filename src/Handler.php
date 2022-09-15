@@ -20,7 +20,7 @@ class Handler extends ExceptionHandler implements SentryHandlerInterface
      */
     public function report(\Throwable $e): void
     {
-        // Report to sentry standard exceptions
+        // Report standard exceptions to sentry
         $this->reportSentry($e);
 
         parent::report($e);
