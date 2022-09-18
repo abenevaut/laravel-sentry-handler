@@ -12,7 +12,7 @@ php artisan sentry:publish --dsn=
 In `app/Exceptions/Handler.php`
 Replace `use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;` by `use abenevaut\SentryHandler\Handler as ExceptionHandler;`
 
-Note: that method is used in https://github.com/abenevaut/demo-laravel-sentry-handler
+Note: that method is used in [demo](https://github.com/abenevaut/demo-laravel-sentry-handler)
 
 ### Use the trait `abenevaut\SentryHandler\Traits\SentryHandlerTrait`
 
@@ -28,4 +28,10 @@ public function report(\Throwable $e): void
 
     parent::report($e);
 }
+```
+
+## Test
+
+```
+php artisan sentry:test
 ```
