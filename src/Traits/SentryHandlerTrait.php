@@ -20,7 +20,7 @@ trait SentryHandlerTrait
     }
 
     /**
-     * Allows to report to Sentry all standard exceptions throwed.
+     * Allows to report to Sentry all standard exceptions thrown.
      *
      * @param  Throwable  $exception
      */
