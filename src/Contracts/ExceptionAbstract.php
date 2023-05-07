@@ -74,7 +74,7 @@ abstract class ExceptionAbstract extends \Exception
      */
     public function report(): void
     {
-        if (app(ExceptionHandler::class)?->isSentryBounded() === true) {
+        if (app(ExceptionHandler::class)?->isSentryBounded()) {
             \Sentry\configureScope(function (Scope $scope): void {
                 app(Pipeline::class)
                     ->send($scope)
@@ -82,7 +82,7 @@ abstract class ExceptionAbstract extends \Exception
                     ->thenReturn();
             });
 
-            $this->isSentryMessage() === true
+            $this->isSentryMessage()
                 ? SentryFacade::captureMessage($this->getMessage(), $this->getSeverity())
                 : SentryFacade::captureException($this);
         }

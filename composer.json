@@ -12,7 +12,7 @@
     "authors": [
         {
             "name": "Antoine Benevaut",
-            "email": "antoine@benevaut.fr"
+            "email": "me@abenevaut.dev"
         }
     ],
     "require": {
@@ -36,8 +36,14 @@
         ]
     },
     "require-dev": {
-        "laravel/framework": "^9.17",
-        "phpunit/phpunit": "^9.5",
-        "mockery/mockery": "^1.5"
+        "laravel/framework": "^9.17 || ^10",
+        "phpunit/phpunit": "^10.1",
+        "mockery/mockery": "^1.5",
+        "degraciamathieu/php-smelly-code-detector": "^1.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     }
 }

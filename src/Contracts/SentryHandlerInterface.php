@@ -14,5 +14,5 @@ interface SentryHandlerInterface
     /**
      * @param  Throwable  $exception
      */
-    public function reportSentry(Throwable $exception): void;
+    public function reportToSentry(Throwable $exception): void;
 }
