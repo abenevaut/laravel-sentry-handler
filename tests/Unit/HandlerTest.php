@@ -99,7 +99,8 @@ class HandlerTest extends TestCase
         /*
          * Mock HubInterface to use with Sentry Facade
          */
-        $this->app->instance(HubInterface::class, \Mockery::mock('Sentry\State\HubInterface[captureException,captureMessage]'));
+        $mock = \Mockery::mock('Sentry\State\HubInterface[captureException,captureMessage]');
+        $this->app->instance(HubInterface::class, $mock);
         AliasLoader::getInstance()->alias(HubInterface::class, SentryFacade::class);
 
         /*
@@ -111,7 +112,7 @@ class HandlerTest extends TestCase
          * Mock config service
          */
         $mock = \Mockery::mock(\Illuminate\Config\Repository::class);
-        
+
         // Refer to call in abenevaut\SentryHandler\Scopes\DefaultScope
         $mock->shouldReceive('get')->with('app.locale')->andReturn('en');
 
